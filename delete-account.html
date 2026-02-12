@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account - DOTKO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: #1a202c;
+            background: #f7fafc;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 60px 40px;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .brand-name {
+            font-size: 3em;
+            font-weight: 700;
+            color: #667eea;
+            letter-spacing: -0.5px;
+        }
+
+        .header-subtitle {
+            font-size: 1.3em;
+            color: #718096;
+            font-weight: 400;
+            margin-top: 8px;
+        }
+
+        .content {
+            background: white;
+            padding: 60px;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #1a202c;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 18px;
+            color: #4a5568;
+            font-size: 1.05em;
+        }
+
+        .warning-box {
+            background: #fff5f5;
+            border-left: 4px solid #f56565;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .warning-box strong {
+            color: #742a2a;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .warning-box p {
+            color: #742a2a;
+            margin-bottom: 10px;
+        }
+
+        .warning-box ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+
+        .warning-box li {
+            color: #742a2a;
+            margin-bottom: 8px;
+        }
+
+        .info-box {
+            background: #f7fafc;
+            border-left: 4px solid #667eea;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .info-box strong {
+            color: #2d3748;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .info-box p {
+            color: #4a5568;
+        }
+
+        .steps {
+            background: #f7fafc;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 25px 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+
+        .step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content h3 {
+            color: #2d3748;
+            margin-bottom: 8px;
+            font-size: 1.2em;
+        }
+
+        .step-content p {
+            color: #4a5568;
+            margin-bottom: 0;
+        }
+
+        .contact-box {
+            background: #f7fafc;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 40px 0;
+            border: 1px solid #e2e8f0;
+        }
+
+        .contact-box h3 {
+            color: #1a202c;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            color: #4a5568;
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .contact-item strong {
+            color: #2d3748;
+            min-width: 70px;
+        }
+
+        .email-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .email-link:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding: 30px 0;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .footer-text {
+            color: #718096;
+            font-size: 0.95em;
+        }
+
+        .footer-links {
+            margin-top: 15px;
+        }
+
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 20px;
+            }
+
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .brand-name {
+                font-size: 2.2em;
+            }
+
+            .header-subtitle {
+                font-size: 1.1em;
+            }
+
+            .content {
+                padding: 30px 20px;
+                margin: 20px;
+                border-radius: 8px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .step {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .contact-item strong {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <img src="assets/icon.png" alt="DOTKO Logo" class="logo">
+                <div>
+                    <div class="brand-name">DOTKO</div>
+                    <div class="header-subtitle">Account Deletion</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <h2>Request Account Deletion</h2>
+
+            <p>
+                We're sorry to see you go. If you wish to delete your DOTKO account and all associated data, please read the information below carefully before proceeding.
+            </p>
+
+            <div class="warning-box">
+                <strong>Important: This Action is Permanent</strong>
+                <p>Deleting your account will permanently remove:</p>
+                <ul>
+                    <li>Your profile and business information</li>
+                    <li>All uploaded documents (GST, PAN, licenses, etc.)</li>
+                    <li>All reports you have filed</li>
+                    <li>All communication history</li>
+                    <li>Your trust score and verification status</li>
+                    <li>All app settings and preferences</li>
+                </ul>
+                <p><strong>Note:</strong> Reports filed against your business by others may be retained for legal and record-keeping purposes as required by law (up to 7 years).</p>
+            </div>
+
+            <div class="info-box">
+                <strong>Before You Delete Your Account</strong>
+                <p>Consider these alternatives:</p>
+                <ul style="margin: 10px 0; padding-left: 25px;">
+                    <li style="margin-bottom: 8px; color: #4a5568;">Temporarily disable notifications in app settings</li>
+                    <li style="margin-bottom: 8px; color: #4a5568;">Update your privacy settings to limit data sharing</li>
+                    <li style="margin-bottom: 8px; color: #4a5568;">Contact our support team to resolve any issues</li>
+                </ul>
+            </div>
+
+            <h2>How to Delete Your Account</h2>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>In-App Deletion</h3>
+                        <p>Open the DOTKO app → Go to Profile → Settings → Scroll to bottom → Tap "Delete Account" → Confirm deletion</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Email Request</h3>
+                        <p>Send an email to <strong>support@dotko.in</strong> with subject line "Account Deletion Request" including your registered email and reason for deletion (optional)</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Verification</h3>
+                        <p>We'll verify your identity and process your request within 48-72 hours. You'll receive a confirmation email once completed.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Data Retention Policy</h2>
+
+            <p>After account deletion:</p>
+            <ul style="margin: 15px 0; padding-left: 25px;">
+                <li style="margin-bottom: 10px; color: #4a5568;">Personal data is deleted within 30 days</li>
+                <li style="margin-bottom: 10px; color: #4a5568;">Backup data is purged within 90 days</li>
+                <li style="margin-bottom: 10px; color: #4a5568;">Transaction records may be retained for 7 years as required by Indian business law</li>
+                <li style="margin-bottom: 10px; color: #4a5568;">Anonymized analytics data may be retained indefinitely</li>
+            </ul>
+
+            <h2>Contact Us</h2>
+
+            <p>If you have questions about account deletion or need assistance, please contact us:</p>
+
+            <div class="contact-box">
+                <h3>Support Team</h3>
+                <div class="contact-item">
+                    <strong>Email:</strong>
+                    <a href="mailto:support@dotko.in?subject=Account%20Deletion%20Request" class="email-link">support@dotko.in</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Subject:</strong>
+                    <span>Account Deletion Request</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Response:</strong>
+                    <span>Within 48-72 hours</span>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong>Need Help Instead?</strong>
+                <p>If you're experiencing issues with the app, our support team is here to help. Contact us before deleting your account - we might be able to resolve your concerns.</p>
+            </div>
+
+            <div class="footer">
+                <p class="footer-text">© 2026 DOTKO.IN - All Rights Reserved</p>
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="mailto:support@dotko.in">Contact Support</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
