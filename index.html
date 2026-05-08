@@ -103,6 +103,19 @@
             background: linear-gradient(135deg, #0b1c30 0%, #213145 100%);
         }
         html { scroll-behavior: smooth; }
+        /* Mobile menu */
+        #mobileMenu { transition: max-height 0.3s ease, opacity 0.3s ease; }
+        /* Responsive hero title */
+        @media (max-width: 640px) {
+            .hero-display { font-size: 36px !important; line-height: 1.15 !important; letter-spacing: -0.01em !important; }
+            .cta-display { font-size: 28px !important; line-height: 1.2 !important; }
+            .section-headline { font-size: 28px !important; }
+        }
+        @media (min-width: 641px) and (max-width: 1023px) {
+            .hero-display { font-size: 48px !important; line-height: 1.1 !important; }
+            .cta-display { font-size: 40px !important; }
+            .section-headline { font-size: 34px !important; }
+        }
     </style>
 </head>
 <body class="bg-surface font-body-md text-on-surface">
@@ -111,7 +124,7 @@
 <div class="max-w-[1280px] mx-auto px-6 h-full flex justify-between items-center">
 <a href="#" class="flex items-center gap-3">
 <img src="assets/icon.png" alt="Dotko.in" class="h-12 w-12 object-contain"/>
-<span class="font-headline-lg text-headline-lg font-extrabold text-primary">Dotko.in</span>
+<span class="font-headline-lg text-headline-lg font-extrabold" style="color:#1565C0">Dotko.in</span>
 </a>
 <div class="hidden md:flex items-center gap-8">
 <a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary border-b-2 border-transparent hover:border-primary pb-1 transition-all" href="#challenge">Challenge</a>
@@ -119,18 +132,31 @@
 <a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary border-b-2 border-transparent hover:border-primary pb-1 transition-all" href="#process">Process</a>
 <a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary border-b-2 border-transparent hover:border-primary pb-1 transition-all" href="#why">Why Us</a>
 </div>
-<div class="flex items-center gap-4">
-<a href="#get-started" class="bg-primary-container text-on-primary-container font-label-bold text-label-bold px-6 py-3 rounded-xl hover:opacity-80 active:scale-95 transition-all">Get Started</a>
+<div class="flex items-center gap-3">
+<a href="#get-started" class="hidden md:inline-flex bg-primary-container text-on-primary-container font-label-bold text-label-bold px-6 py-3 rounded-xl hover:opacity-80 active:scale-95 transition-all">Get Started</a>
+<button id="mobileNavBtn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-on-surface hover:bg-surface-container transition-colors" onclick="toggleMobileMenu()">
+  <i class="fas fa-bars text-lg"></i>
+</button>
 </div>
 </div>
 </nav>
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="md:hidden fixed top-20 left-0 right-0 bg-surface/98 backdrop-blur-md border-b border-outline-variant shadow-lg z-40 hidden">
+  <div class="max-w-[1280px] mx-auto px-6 py-5 flex flex-col gap-1">
+    <a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary py-3 px-2 border-b border-outline-variant/40 transition-colors" href="#challenge" onclick="toggleMobileMenu()">Challenge</a>
+    <a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary py-3 px-2 border-b border-outline-variant/40 transition-colors" href="#our-solution" onclick="toggleMobileMenu()">Solution</a>
+    <a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary py-3 px-2 border-b border-outline-variant/40 transition-colors" href="#process" onclick="toggleMobileMenu()">Process</a>
+    <a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary py-3 px-2 border-b border-outline-variant/40 transition-colors" href="#why" onclick="toggleMobileMenu()">Why Us</a>
+    <a href="#get-started" class="mt-3 bg-primary-container text-on-primary-container font-label-bold text-label-bold px-6 py-3 rounded-xl text-center hover:opacity-80 transition-all" onclick="toggleMobileMenu()">Get Started</a>
+  </div>
+</div>
 <main class="mt-20">
 <!-- Hero Section -->
-<section class="relative overflow-hidden bg-white py-[120px]">
-<div class="max-w-[1280px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<section class="relative overflow-hidden bg-white py-12 md:py-20 lg:py-[120px]">
+<div class="max-w-[1280px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
 <div class="z-10">
 <span class="inline-block bg-primary-container/20 text-primary font-label-bold text-label-bold px-4 py-1.5 rounded-full mb-6">INDIA'S FIRST TRUST INFRASTRUCTURE</span>
-<h1 class="font-display-xl text-display-xl text-on-surface mb-6">B2B Trust, Quantified.</h1>
+<h1 class="font-display-xl hero-display text-on-surface mb-6" style="font-size:64px;line-height:1.1;letter-spacing:-0.02em;font-weight:800">B2B Trust, Quantified.</h1>
 <p class="font-body-lg text-body-lg text-secondary max-w-xl mb-10">
                         Eliminate transaction risks and unverified credibility with India’s first digital trust infrastructure for businesses. Built for the modern enterprise economy.
                     </p>
@@ -144,6 +170,14 @@ How it Works
 <div class="mt-10">
 <p class="font-label-bold text-label-bold text-secondary mb-4 uppercase tracking-widest">Available on all platforms</p>
 <div class="flex flex-wrap gap-3">
+<!-- Web -->
+<a href="https://web.dotko.in" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-primary text-on-primary font-label-bold text-label-bold px-6 py-3.5 rounded-xl transition-all shadow-md hover:opacity-90 active:scale-95">
+<span class="material-symbols-outlined text-xl" data-icon="language">language</span>
+<div class="flex flex-col leading-none">
+<span class="text-[10px] opacity-80 font-normal">Open</span>
+<span class="text-sm font-bold">Web Version</span>
+</div>
+</a>
 <!-- Android -->
 <a href="#" class="flex items-center gap-3 bg-[#3ddc84] hover:bg-[#32c274] text-white font-label-bold text-label-bold px-6 py-3.5 rounded-xl transition-all shadow-md active:scale-95">
 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.18 15.64a2.18 2.18 0 0 1-2.18-2.18V9.36a2.18 2.18 0 1 1 4.36 0v4.1a2.18 2.18 0 0 1-2.18 2.18zm11.64 0a2.18 2.18 0 0 1-2.18-2.18V9.36a2.18 2.18 0 1 1 4.36 0v4.1a2.18 2.18 0 0 1-2.18 2.18zM3.27 8.12A.91.91 0 0 1 2.36 7.2V5.11a.91.91 0 1 1 1.82 0V7.2a.91.91 0 0 1-.91.92zm17.46 0a.91.91 0 0 1-.91-.92V5.11a.91.91 0 1 1 1.82 0V7.2a.91.91 0 0 1-.91.92zM5.5 17.5v2.32a2.18 2.18 0 1 0 4.36 0V17.5H5.5zm8.64 0v2.32a2.18 2.18 0 1 0 4.36 0V17.5h-4.36zM5.5 8.12h13V17.5h-13V8.12zm1.4-3.57 1.13-1.96a.27.27 0 0 0-.47-.27L6.4 4.32a6.36 6.36 0 0 0-2.9 5.44h17a6.36 6.36 0 0 0-2.9-5.44l-1.16-2a.27.27 0 1 0-.47.27l1.13 1.96A5.48 5.48 0 0 0 14 5.6H10a5.48 5.48 0 0 0-3.1-.05z"/></svg>
@@ -158,14 +192,6 @@ How it Works
 <div class="flex flex-col leading-none">
 <span class="text-[10px] opacity-80 font-normal">Download for</span>
 <span class="text-sm font-bold">iOS</span>
-</div>
-</a>
-<!-- Web -->
-<a href="https://web.dotko.in" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-primary text-on-primary font-label-bold text-label-bold px-6 py-3.5 rounded-xl transition-all shadow-md hover:opacity-90 active:scale-95">
-<span class="material-symbols-outlined text-xl" data-icon="language">language</span>
-<div class="flex flex-col leading-none">
-<span class="text-[10px] opacity-80 font-normal">Open</span>
-<span class="text-sm font-bold">Web Version</span>
 </div>
 </a>
 </div>
@@ -199,11 +225,11 @@ How it Works
 </div>
 </div>
 <!-- The Challenge Section -->
-<section id="challenge" class="py-[120px] bg-white">
+<section id="challenge" class="py-14 md:py-20 lg:py-[120px] bg-white">
 <div class="max-w-[1280px] mx-auto px-6">
 <div class="text-center mb-16">
 <span class="font-label-bold text-label-bold text-primary uppercase tracking-widest">CHALLENGE</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface mt-4">The Trust Deficit</h2>
+<h2 class="font-headline-lg section-headline text-on-surface mt-4" style="font-size:40px;line-height:1.2;font-weight:700">The Trust Deficit</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <!-- Card 1 -->
@@ -234,11 +260,11 @@ How it Works
 </div>
 </section>
 <!-- Solution Section -->
-<section id="our-solution" class="py-[120px] bg-surface-container-low">
+<section id="our-solution" class="py-14 md:py-20 lg:py-[120px] bg-surface-container-low">
 <div class="max-w-[1280px] mx-auto px-6">
 <div class="text-center mb-6">
 <span class="font-label-bold text-label-bold text-primary uppercase tracking-widest">Our Solution</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface mt-4">The DotKo.in Trust Framework</h2>
+<h2 class="font-headline-lg section-headline text-on-surface mt-4" style="font-size:40px;line-height:1.2;font-weight:700">The DotKo.in Trust Framework</h2>
 <p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto mt-4">A comprehensive digital trust infrastructure designed for modern business needs.</p>
 </div>
 <div class="mt-16">
@@ -284,9 +310,9 @@ How it Works
 </div>
 </section>
 <!-- The Framework Section -->
-<section id="process" class="py-[120px] trust-gradient text-white">
+<section id="process" class="py-14 md:py-20 lg:py-[120px] trust-gradient text-white">
 <div class="max-w-[1280px] mx-auto px-6">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 <div>
 <span class="font-label-bold text-label-bold text-primary-container uppercase tracking-widest">HOW IT WORKS</span>
 <h2 class="font-headline-lg text-headline-lg mt-4 mb-8">Establishing Digital Integrity in 4 Steps</h2>
@@ -353,13 +379,13 @@ How it Works
 </div>
 </section>
 <!-- Audience Section -->
-<section id="why" class="py-[120px] bg-surface">
+<section id="why" class="py-14 md:py-20 lg:py-[120px] bg-surface">
 <div class="max-w-[1280px] mx-auto px-6">
 <div class="text-center mb-16">
 <span class="font-label-bold text-label-bold text-primary uppercase tracking-widest">AUDIENCE</span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface mt-4">Built for Every Business</h2>
+<h2 class="font-headline-lg section-headline text-on-surface mt-4" style="font-size:40px;line-height:1.2;font-weight:700">Built for Every Business</h2>
 </div>
-<div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 <div class="bg-white p-8 rounded-3xl text-center border border-outline-variant hover:shadow-xl hover:-translate-y-1 transition-all">
 <div class="w-16 h-16 bg-surface-container mx-auto rounded-2xl flex items-center justify-center mb-6 text-primary">
 <span class="material-symbols-outlined text-4xl" data-icon="factory">factory</span>
@@ -388,14 +414,22 @@ How it Works
 </div>
 </section>
 <!-- Final CTA Section -->
-<section id="get-started" class="py-[120px] bg-white">
+<section id="get-started" class="py-14 md:py-20 lg:py-[120px] bg-white">
 <div class="max-w-[1280px] mx-auto px-6">
-<div class="bg-primary-container rounded-[48px] p-12 md:p-20 text-center relative overflow-hidden">
+<div class="bg-primary-container rounded-3xl md:rounded-[48px] p-8 sm:p-12 md:p-20 text-center relative overflow-hidden">
 <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
 <div class="absolute bottom-0 left-0 w-48 h-48 bg-black/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
-<h2 class="font-display-xl text-display-xl text-on-primary-container mb-8 relative z-10">Ready to Transform Your Business Trust?</h2>
+<h2 class="font-display-xl cta-display text-on-primary-container mb-8 relative z-10" style="font-size:56px;line-height:1.1;font-weight:800">Ready to Transform Your Business Trust?</h2>
 <p class="font-body-lg text-body-lg text-on-primary-container/80 max-w-2xl mx-auto mb-10 relative z-10">Join thousands of businesses already using Dotko.in to secure their transactions and build lasting credibility.</p>
 <div class="relative z-10 flex flex-wrap justify-center gap-4">
+<!-- Web -->
+<a href="https://web.dotko.in" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-inverse-surface hover:opacity-90 text-white font-label-bold text-label-bold px-6 py-3.5 rounded-xl transition-all shadow-md active:scale-95">
+<span class="material-symbols-outlined text-xl">language</span>
+<div class="flex flex-col leading-none">
+<span class="text-[10px] opacity-80 font-normal">Open</span>
+<span class="text-sm font-bold">Web Version</span>
+</div>
+</a>
 <!-- Android -->
 <a href="#" class="flex items-center gap-3 bg-[#3ddc84] hover:bg-[#32c274] text-white font-label-bold text-label-bold px-6 py-3.5 rounded-xl transition-all shadow-md active:scale-95">
 <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M6.18 15.64a2.18 2.18 0 0 1-2.18-2.18V9.36a2.18 2.18 0 1 1 4.36 0v4.1a2.18 2.18 0 0 1-2.18 2.18zm11.64 0a2.18 2.18 0 0 1-2.18-2.18V9.36a2.18 2.18 0 1 1 4.36 0v4.1a2.18 2.18 0 0 1-2.18 2.18zM3.27 8.12A.91.91 0 0 1 2.36 7.2V5.11a.91.91 0 1 1 1.82 0V7.2a.91.91 0 0 1-.91.92zm17.46 0a.91.91 0 0 1-.91-.92V5.11a.91.91 0 1 1 1.82 0V7.2a.91.91 0 0 1-.91.92zM5.5 17.5v2.32a2.18 2.18 0 1 0 4.36 0V17.5H5.5zm8.64 0v2.32a2.18 2.18 0 1 0 4.36 0V17.5h-4.36zM5.5 8.12h13V17.5h-13V8.12zm1.4-3.57 1.13-1.96a.27.27 0 0 0-.47-.27L6.4 4.32a6.36 6.36 0 0 0-2.9 5.44h17a6.36 6.36 0 0 0-2.9-5.44l-1.16-2a.27.27 0 1 0-.47.27l1.13 1.96A5.48 5.48 0 0 0 14 5.6H10a5.48 5.48 0 0 0-3.1-.05z"/></svg>
@@ -412,14 +446,6 @@ How it Works
 <span class="text-sm font-bold">iOS</span>
 </div>
 </a>
-<!-- Web -->
-<a href="https://web.dotko.in" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-inverse-surface hover:opacity-90 text-white font-label-bold text-label-bold px-6 py-3.5 rounded-xl transition-all shadow-md active:scale-95">
-<span class="material-symbols-outlined text-xl">language</span>
-<div class="flex flex-col leading-none">
-<span class="text-[10px] opacity-80 font-normal">Open</span>
-<span class="text-sm font-bold">Web Version</span>
-</div>
-</a>
 </div>
 </div>
 </div>
@@ -428,9 +454,9 @@ How it Works
 <!-- Footer -->
 <footer class="bg-inverse-surface py-16 border-t border-outline/20">
 <div class="max-w-[1280px] mx-auto px-6">
-<div class="grid grid-cols-1 md:grid-cols-5 gap-12 pb-12">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 pb-12">
 <!-- Brand -->
-<div class="md:col-span-1">
+<div class="sm:col-span-2 lg:col-span-1">
 <div class="font-headline-md text-headline-md text-primary-fixed mb-4">DotKo.in</div>
 <p class="text-surface-variant font-body-md text-sm leading-relaxed mb-6">Building India's digital trust infrastructure—one verified business at a time.</p>
 <div class="flex gap-4">
@@ -506,4 +532,29 @@ How it Works
 </div>
 </div>
 </footer>
+<script>
+function toggleMobileMenu() {
+  var menu = document.getElementById('mobileMenu');
+  var btn = document.getElementById('mobileNavBtn');
+  var icon = btn ? btn.querySelector('i') : null;
+  if (menu.classList.contains('hidden')) {
+    menu.classList.remove('hidden');
+    if (icon) { icon.className = 'fas fa-times text-lg'; }
+  } else {
+    menu.classList.add('hidden');
+    if (icon) { icon.className = 'fas fa-bars text-lg'; }
+  }
+}
+// Close mobile menu on outside click
+document.addEventListener('click', function(e) {
+  var menu = document.getElementById('mobileMenu');
+  var btn = document.getElementById('mobileNavBtn');
+  if (!menu || menu.classList.contains('hidden')) return;
+  if (!menu.contains(e.target) && !btn.contains(e.target)) {
+    menu.classList.add('hidden');
+    var icon = btn.querySelector('i');
+    if (icon) icon.className = 'fas fa-bars text-lg';
+  }
+});
+</script>
 </body></html>
