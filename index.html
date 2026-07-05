@@ -5,7 +5,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Dotko.in | India's First Digital Trust Infrastructure</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 <script id="tailwind-config">
@@ -14,52 +14,52 @@
         theme: {
           extend: {
             "colors": {
-                    "secondary": "#575d78",
+                    "secondary": "#6D8196",
                     "on-primary": "#ffffff",
                     "on-secondary": "#ffffff",
                     "error-container": "#ffdad6",
                     "tertiary-container": "#bfc4d5",
-                    "on-primary-container": "#6b4c00",
-                    "surface-container": "#e5eeff",
-                    "surface-container-highest": "#d3e4fe",
+                    "on-primary-container": "#000a40",
+                    "surface-container": "#eef4ff",
+                    "surface-container-highest": "#d9e6ff",
                     "surface-container-lowest": "#ffffff",
-                    "surface-variant": "#d3e4fe",
-                    "on-secondary-container": "#5b617d",
+                    "surface-variant": "#64748b",
+                    "on-secondary-container": "#475569",
                     "on-tertiary-container": "#4b515f",
-                    "surface-tint": "#7c5800",
-                    "on-primary-fixed": "#271900",
-                    "outline-variant": "#d5c4ab",
-                    "inverse-primary": "#ffba20",
-                    "inverse-surface": "#213145",
-                    "surface-dim": "#cbdbf5",
-                    "primary": "#7c5800",
+                    "surface-tint": "#0047AB",
+                    "on-primary-fixed": "#facc15",
+                    "outline-variant": "#e2e8f0",
+                    "inverse-primary": "#fcd34d",
+                    "inverse-surface": "#ffffff",
+                    "surface-dim": "#eef4ff",
+                    "primary": "#0047AB",
                     "tertiary-fixed": "#dde2f4",
-                    "outline": "#837560",
+                    "outline": "#cbd5e1",
                     "on-error-container": "#93000a",
                     "error": "#ba1a1a",
-                    "surface-container-low": "#eff4ff",
-                    "secondary-fixed": "#dce1ff",
-                    "on-surface": "#0b1c30",
+                    "surface-container-low": "#eef4ff",
+                    "secondary-fixed": "#d9e6ff",
+                    "on-surface": "#000a40",
                     "on-tertiary": "#ffffff",
-                    "primary-fixed": "#ffdea8",
-                    "on-primary-fixed-variant": "#5e4200",
+                    "primary-fixed": "#facc15",
+                    "on-primary-fixed-variant": "#000080",
                     "on-error": "#ffffff",
                     "on-tertiary-fixed": "#161c28",
-                    "inverse-on-surface": "#eaf1ff",
+                    "inverse-on-surface": "#000a40",
                     "on-secondary-fixed-variant": "#3f465f",
-                    "surface": "#f8f9ff",
-                    "on-surface-variant": "#514532",
-                    "background": "#f8f9ff",
+                    "surface": "#f8f9fb",
+                    "on-surface-variant": "#475569",
+                    "background": "#f8f9fb",
                     "on-secondary-fixed": "#141a32",
-                    "primary-fixed-dim": "#ffba20",
+                    "primary-fixed-dim": "#f5b400",
                     "tertiary-fixed-dim": "#c1c6d7",
-                    "secondary-container": "#d8defe",
-                    "primary-container": "#ffb800",
-                    "on-background": "#0b1c30",
-                    "surface-container-high": "#dce9ff",
+                    "secondary-container": "#d9e6ff",
+                    "primary-container": "#facc15",
+                    "on-background": "#000a40",
+                    "surface-container-high": "#d9e6ff",
                     "secondary-fixed-dim": "#bfc5e4",
                     "tertiary": "#595e6d",
-                    "surface-bright": "#f8f9ff",
+                    "surface-bright": "#ffffff",
                     "on-tertiary-fixed-variant": "#414755"
             },
             "borderRadius": {
@@ -76,12 +76,12 @@
                     "gutter": "24px"
             },
             "fontFamily": {
-                    "headline-md": ["Manrope"],
-                    "headline-lg": ["Manrope"],
-                    "label-bold": ["Inter"],
-                    "body-lg": ["Inter"],
-                    "display-xl": ["Manrope"],
-                    "body-md": ["Inter"]
+                    "headline-md": ["Syne", "sans-serif"],
+                    "headline-lg": ["Syne", "sans-serif"],
+                    "label-bold": ["Inter", "sans-serif"],
+                    "body-lg": ["Inter", "sans-serif"],
+                    "display-xl": ["Syne", "sans-serif"],
+                    "body-md": ["Inter", "sans-serif"]
             },
             "fontSize": {
                     "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
@@ -99,8 +99,42 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+        /* Cobalt-night — same dark gradient used by web.dotko.in's "How it works" section */
         .trust-gradient {
-            background: linear-gradient(135deg, #0b1c30 0%, #213145 100%);
+            background: linear-gradient(135deg, #000a40 0%, #000080 45%, #0047ab 100%);
+        }
+        /* Cobalt-sky hero gradient — matches web.dotko.in's hero exactly */
+        .hero-gradient {
+            background:
+                radial-gradient(ellipse 120% 80% at 50% 0%, rgba(130, 200, 229, 0.5) 0%, transparent 60%),
+                radial-gradient(ellipse 80% 60% at 30% 30%, rgba(0, 71, 171, 0.7) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 70% at 70% 40%, rgba(0, 0, 128, 0.5) 0%, transparent 60%),
+                radial-gradient(ellipse 90% 50% at 50% 90%, rgba(130, 200, 229, 0.3) 0%, transparent 50%),
+                linear-gradient(180deg, #0047ab 0%, #1f5fd6 30%, #4d80f0 60%, #82c8e5 100%);
+            animation: heroShift 16s ease-in-out infinite;
+        }
+        @keyframes heroShift {
+            0%, 100% { background-position: 0% 0%, 0% 0%, 100% 0%, 50% 100%, 0% 0%; }
+            50%      { background-position: 100% 50%, 50% 50%, 0% 100%, 50% 0%, 0% 0%; }
+        }
+        .hero-stripes {
+            position: absolute; inset: 0; pointer-events: none;
+            background: repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 40px);
+        }
+        /* Yellow-through-cobalt gradient text — used for the accent word in headlines */
+        .text-gradient {
+            background: linear-gradient(110deg, #facc15 0%, #fde68a 50%, #ffffff 100%);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
+        }
+        /* Scroll-reveal: fades/slides in the first time a section enters view (see script at bottom) */
+        .reveal {
+            opacity: 0; transform: translateY(24px);
+            transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+        }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+        @media (prefers-reduced-motion: reduce) {
+            .hero-gradient, .reveal { animation: none !important; }
+            .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
         }
         html { scroll-behavior: smooth; }
         /* Mobile menu */
@@ -124,7 +158,7 @@
 <div class="max-w-[1280px] mx-auto px-6 h-full flex justify-between items-center">
 <a href="#" class="flex items-center gap-3">
 <img src="assets/icon.png" alt="Dotko.in" class="h-12 w-12 object-contain"/>
-<span class="font-headline-lg text-headline-lg font-extrabold" style="color:#1565C0">Dotko.in</span>
+<span class="font-headline-lg text-headline-lg font-extrabold text-primary">Dotko.in</span>
 </a>
 <div class="hidden md:flex items-center gap-8">
 <a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary border-b-2 border-transparent hover:border-primary pb-1 transition-all" href="#challenge">Challenge</a>
@@ -152,26 +186,29 @@
 </div>
 <main class="mt-20">
 <!-- Hero Section -->
-<section class="relative overflow-hidden bg-white py-12 md:py-20 lg:py-[120px]">
-<div class="max-w-[1280px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+<section class="hero-gradient relative overflow-hidden py-12 md:py-20 lg:py-[120px]">
+<div class="hero-stripes"></div>
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute top-1/2 -left-48 w-80 h-80 bg-[#82c8e5]/20 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="max-w-[1280px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center relative z-10">
 <div class="z-10">
-<span class="inline-block bg-primary-container/20 text-primary font-label-bold text-label-bold px-4 py-1.5 rounded-full mb-6">INDIA'S FIRST TRUST INFRASTRUCTURE</span>
-<h1 class="font-display-xl hero-display text-on-surface mb-6" style="font-size:64px;line-height:1.1;letter-spacing:-0.02em;font-weight:800">B2B Trust, Quantified.</h1>
-<p class="font-body-lg text-body-lg text-secondary max-w-xl mb-10">
+<span class="inline-block bg-white/10 border border-white/20 backdrop-blur-md text-white font-label-bold text-label-bold px-4 py-1.5 rounded-full mb-6">INDIA'S FIRST TRUST INFRASTRUCTURE</span>
+<h1 class="font-display-xl hero-display text-white mb-6" style="font-size:64px;line-height:1.1;letter-spacing:-0.02em;font-weight:800">B2B Trust, <span class="text-gradient">Quantified.</span></h1>
+<p class="font-body-lg text-body-lg text-white/70 max-w-xl mb-10">
                         Eliminate transaction risks and unverified credibility with India’s first digital trust infrastructure for businesses. Built for the modern enterprise economy.
                     </p>
 <div class="flex flex-wrap gap-4">
-<a href="#get-started" class="bg-primary-container text-on-primary-container font-label-bold text-label-bold px-8 py-4 rounded-xl hover:opacity-90 shadow-lg shadow-primary-container/20 transition-all">Get Started</a>
-<a href="#process" class="border border-outline text-on-surface font-label-bold text-label-bold px-8 py-4 rounded-xl hover:bg-surface-container transition-all flex items-center gap-2">
+<a href="#get-started" class="bg-primary-container text-on-primary-container font-label-bold text-label-bold px-8 py-4 rounded-xl hover:opacity-90 shadow-lg shadow-black/20 transition-all">Get Started</a>
+<a href="#process" class="border border-white/30 text-white font-label-bold text-label-bold px-8 py-4 rounded-xl hover:bg-white/10 transition-all flex items-center gap-2">
 <span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
 How it Works
 </a>
 </div>
 <div class="mt-10">
-<p class="font-label-bold text-label-bold text-secondary mb-4 uppercase tracking-widest">Available on all platforms</p>
+<p class="font-label-bold text-label-bold text-white/60 mb-4 uppercase tracking-widest">Available on all platforms</p>
 <div class="flex flex-wrap gap-3">
 <!-- Web -->
-<a href="https://web.dotko.in" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-primary text-on-primary font-label-bold text-label-bold px-6 py-3.5 rounded-xl transition-all shadow-md hover:opacity-90 active:scale-95">
+<a href="https://web.dotko.in" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-white text-primary font-label-bold text-label-bold px-6 py-3.5 rounded-xl transition-all shadow-md hover:bg-white/90 active:scale-95">
 <span class="material-symbols-outlined text-xl" data-icon="language">language</span>
 <div class="flex flex-col leading-none">
 <span class="text-[10px] opacity-80 font-normal">Open</span>
@@ -227,14 +264,14 @@ How it Works
 <!-- The Challenge Section -->
 <section id="challenge" class="py-14 md:py-20 lg:py-[120px] bg-white">
 <div class="max-w-[1280px] mx-auto px-6">
-<div class="text-center mb-16">
+<div class="text-center mb-16 reveal">
 <span class="font-label-bold text-label-bold text-primary uppercase tracking-widest">CHALLENGE</span>
 <h2 class="font-headline-lg section-headline text-on-surface mt-4" style="font-size:40px;line-height:1.2;font-weight:700">The Trust Deficit</h2>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
 <!-- Card 1 -->
 <div class="group p-8 rounded-3xl border border-outline-variant bg-surface-container-lowest hover:border-primary/50 transition-all shadow-sm">
-<div class="w-14 h-14 bg-surface-container rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary-container transition-colors">
+<div class="w-14 h-14 bg-surface-container rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
 <span class="material-symbols-outlined text-3xl" data-icon="payments">payments</span>
 </div>
 <h3 class="font-headline-md text-headline-md text-on-surface mb-4">Payment Uncertainties</h3>
@@ -242,7 +279,7 @@ How it Works
 </div>
 <!-- Card 2 -->
 <div class="group p-8 rounded-3xl border border-outline-variant bg-surface-container-lowest hover:border-primary/50 transition-all shadow-sm">
-<div class="w-14 h-14 bg-surface-container rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary-container transition-colors">
+<div class="w-14 h-14 bg-surface-container rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
 <span class="material-symbols-outlined text-3xl" data-icon="fact_check">fact_check</span>
 </div>
 <h3 class="font-headline-md text-headline-md text-on-surface mb-4">Unverified Credibility</h3>
@@ -250,7 +287,7 @@ How it Works
 </div>
 <!-- Card 3 -->
 <div class="group p-8 rounded-3xl border border-outline-variant bg-surface-container-lowest hover:border-primary/50 transition-all shadow-sm">
-<div class="w-14 h-14 bg-surface-container rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary-container transition-colors">
+<div class="w-14 h-14 bg-surface-container rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
 <span class="material-symbols-outlined text-3xl" data-icon="gavel">gavel</span>
 </div>
 <h3 class="font-headline-md text-headline-md text-on-surface mb-4">Informal Validation</h3>
@@ -262,7 +299,7 @@ How it Works
 <!-- Solution Section -->
 <section id="our-solution" class="py-14 md:py-20 lg:py-[120px] bg-surface-container-low">
 <div class="max-w-[1280px] mx-auto px-6">
-<div class="text-center mb-6">
+<div class="text-center mb-6 reveal">
 <span class="font-label-bold text-label-bold text-primary uppercase tracking-widest">Our Solution</span>
 <h2 class="font-headline-lg section-headline text-on-surface mt-4" style="font-size:40px;line-height:1.2;font-weight:700">The DotKo.in Trust Framework</h2>
 <p class="font-body-lg text-body-lg text-secondary max-w-2xl mx-auto mt-4">A comprehensive digital trust infrastructure designed for modern business needs.</p>
@@ -272,10 +309,10 @@ How it Works
 <span class="font-label-bold text-label-bold text-primary uppercase tracking-widest">Core Trust Features</span>
 <p class="font-body-md text-body-md text-secondary max-w-xl mx-auto mt-3">Our comprehensive trust infrastructure provides everything your business needs to trade with confidence.</p>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
 <!-- Feature 1 -->
 <div class="group bg-white p-8 rounded-3xl border border-outline-variant hover:border-primary/40 hover:shadow-xl hover:-translate-y-1 transition-all text-center">
-<div class="w-14 h-14 bg-surface-container rounded-2xl flex items-center justify-center mx-auto mb-5 text-primary group-hover:bg-primary-container transition-colors">
+<div class="w-14 h-14 bg-surface-container rounded-2xl flex items-center justify-center mx-auto mb-5 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
 <span class="material-symbols-outlined text-3xl">badge</span>
 </div>
 <h4 class="font-label-bold text-label-bold text-on-surface mb-2">Digital Trust Profiles</h4>
@@ -283,7 +320,7 @@ How it Works
 </div>
 <!-- Feature 2 -->
 <div class="group bg-white p-8 rounded-3xl border border-outline-variant hover:border-primary/40 hover:shadow-xl hover:-translate-y-1 transition-all text-center">
-<div class="w-14 h-14 bg-surface-container rounded-2xl flex items-center justify-center mx-auto mb-5 text-primary group-hover:bg-primary-container transition-colors">
+<div class="w-14 h-14 bg-surface-container rounded-2xl flex items-center justify-center mx-auto mb-5 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
 <span class="material-symbols-outlined text-3xl">verified</span>
 </div>
 <h4 class="font-label-bold text-label-bold text-on-surface mb-2">Verified Business Signals</h4>
@@ -291,7 +328,7 @@ How it Works
 </div>
 <!-- Feature 3 -->
 <div class="group bg-white p-8 rounded-3xl border border-outline-variant hover:border-primary/40 hover:shadow-xl hover:-translate-y-1 transition-all text-center">
-<div class="w-14 h-14 bg-surface-container rounded-2xl flex items-center justify-center mx-auto mb-5 text-primary group-hover:bg-primary-container transition-colors">
+<div class="w-14 h-14 bg-surface-container rounded-2xl flex items-center justify-center mx-auto mb-5 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
 <span class="material-symbols-outlined text-3xl">analytics</span>
 </div>
 <h4 class="font-label-bold text-label-bold text-on-surface mb-2">Smart Trust Scoring</h4>
@@ -299,7 +336,7 @@ How it Works
 </div>
 <!-- Feature 4 -->
 <div class="group bg-white p-8 rounded-3xl border border-outline-variant hover:border-primary/40 hover:shadow-xl hover:-translate-y-1 transition-all text-center">
-<div class="w-14 h-14 bg-surface-container rounded-2xl flex items-center justify-center mx-auto mb-5 text-primary group-hover:bg-primary-container transition-colors">
+<div class="w-14 h-14 bg-surface-container rounded-2xl flex items-center justify-center mx-auto mb-5 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
 <span class="material-symbols-outlined text-3xl">hub</span>
 </div>
 <h4 class="font-label-bold text-label-bold text-on-surface mb-2">Transparent Ecosystem</h4>
@@ -381,11 +418,11 @@ How it Works
 <!-- Audience Section -->
 <section id="why" class="py-14 md:py-20 lg:py-[120px] bg-surface">
 <div class="max-w-[1280px] mx-auto px-6">
-<div class="text-center mb-16">
+<div class="text-center mb-16 reveal">
 <span class="font-label-bold text-label-bold text-primary uppercase tracking-widest">AUDIENCE</span>
 <h2 class="font-headline-lg section-headline text-on-surface mt-4" style="font-size:40px;line-height:1.2;font-weight:700">Built for Every Business</h2>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
 <div class="bg-white p-8 rounded-3xl text-center border border-outline-variant hover:shadow-xl hover:-translate-y-1 transition-all">
 <div class="w-16 h-16 bg-surface-container mx-auto rounded-2xl flex items-center justify-center mb-6 text-primary">
 <span class="material-symbols-outlined text-4xl" data-icon="factory">factory</span>
@@ -416,14 +453,14 @@ How it Works
 <!-- Final CTA Section -->
 <section id="get-started" class="py-14 md:py-20 lg:py-[120px] bg-white">
 <div class="max-w-[1280px] mx-auto px-6">
-<div class="bg-primary-container rounded-3xl md:rounded-[48px] p-8 sm:p-12 md:p-20 text-center relative overflow-hidden">
+<div class="bg-primary-container rounded-3xl md:rounded-[48px] p-8 sm:p-12 md:p-20 text-center relative overflow-hidden reveal">
 <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
 <div class="absolute bottom-0 left-0 w-48 h-48 bg-black/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
 <h2 class="font-display-xl cta-display text-on-primary-container mb-8 relative z-10" style="font-size:56px;line-height:1.1;font-weight:800">Ready to Transform Your Business Trust?</h2>
 <p class="font-body-lg text-body-lg text-on-primary-container/80 max-w-2xl mx-auto mb-10 relative z-10">Join thousands of businesses already using Dotko.in to secure their transactions and build lasting credibility.</p>
 <div class="relative z-10 flex flex-wrap justify-center gap-4">
 <!-- Web -->
-<a href="https://web.dotko.in" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-inverse-surface hover:opacity-90 text-white font-label-bold text-label-bold px-6 py-3.5 rounded-xl transition-all shadow-md active:scale-95">
+<a href="https://web.dotko.in" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-primary hover:opacity-90 text-white font-label-bold text-label-bold px-6 py-3.5 rounded-xl transition-all shadow-md active:scale-95">
 <span class="material-symbols-outlined text-xl">language</span>
 <div class="flex flex-col leading-none">
 <span class="text-[10px] opacity-80 font-normal">Open</span>
@@ -452,65 +489,65 @@ How it Works
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-inverse-surface py-16 border-t border-outline/20">
+<footer class="bg-white py-16 border-t border-outline-variant">
 <div class="max-w-[1280px] mx-auto px-6">
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 pb-12">
 <!-- Brand -->
 <div class="sm:col-span-2 lg:col-span-1">
-<div class="font-headline-md text-headline-md text-primary-fixed mb-4">DotKo.in</div>
+<div class="font-headline-md text-headline-md text-primary mb-4">DotKo.in</div>
 <p class="text-surface-variant font-body-md text-sm leading-relaxed mb-6">Building India's digital trust infrastructure—one verified business at a time.</p>
 <div class="flex gap-4">
-<a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-primary-container/30 flex items-center justify-center text-surface-variant hover:text-primary-container transition-all">
+<a href="#" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-primary/10 flex items-center justify-center text-surface-variant hover:text-primary transition-all">
 <i class="fab fa-twitter text-sm"></i>
 </a>
-<a href="https://www.linkedin.com/company/dotko-in/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-white/10 hover:bg-primary-container/30 flex items-center justify-center text-surface-variant hover:text-primary-container transition-all">
+<a href="https://www.linkedin.com/company/dotko-in/" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-primary/10 flex items-center justify-center text-surface-variant hover:text-primary transition-all">
 <i class="fab fa-linkedin-in text-sm"></i>
 </a>
-<a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-primary-container/30 flex items-center justify-center text-surface-variant hover:text-primary-container transition-all">
+<a href="#" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-primary/10 flex items-center justify-center text-surface-variant hover:text-primary transition-all">
 <i class="fab fa-instagram text-sm"></i>
 </a>
-<a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-primary-container/30 flex items-center justify-center text-surface-variant hover:text-primary-container transition-all">
+<a href="#" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-primary/10 flex items-center justify-center text-surface-variant hover:text-primary transition-all">
 <i class="fab fa-youtube text-sm"></i>
 </a>
 </div>
 </div>
 <!-- Platform -->
 <div>
-<h4 class="font-label-bold text-label-bold text-primary-fixed mb-6">Platform</h4>
+<h4 class="font-label-bold text-label-bold text-slate-900 mb-6">Platform</h4>
 <ul class="space-y-3">
-<li><a class="text-surface-variant hover:text-primary-container transition-all font-body-md text-sm" href="#">Home</a></li>
-<li><a class="text-surface-variant hover:text-primary-container transition-all font-body-md text-sm" href="#challenge">Challenge</a></li>
-<li><a class="text-surface-variant hover:text-primary-container transition-all font-body-md text-sm" href="#our-solution">Solution</a></li>
-<li><a class="text-surface-variant hover:text-primary-container transition-all font-body-md text-sm" href="#process">Process</a></li>
-<li><a class="text-surface-variant hover:text-primary-container transition-all font-body-md text-sm" href="#why">Advantages</a></li>
+<li><a class="text-surface-variant hover:text-primary transition-all font-body-md text-sm" href="#">Home</a></li>
+<li><a class="text-surface-variant hover:text-primary transition-all font-body-md text-sm" href="#challenge">Challenge</a></li>
+<li><a class="text-surface-variant hover:text-primary transition-all font-body-md text-sm" href="#our-solution">Solution</a></li>
+<li><a class="text-surface-variant hover:text-primary transition-all font-body-md text-sm" href="#process">Process</a></li>
+<li><a class="text-surface-variant hover:text-primary transition-all font-body-md text-sm" href="#why">Advantages</a></li>
 </ul>
 </div>
 <!-- Resources -->
 <div>
-<h4 class="font-label-bold text-label-bold text-primary-fixed mb-6">Resources</h4>
+<h4 class="font-label-bold text-label-bold text-slate-900 mb-6">Resources</h4>
 <ul class="space-y-3">
-<li><a class="text-surface-variant hover:text-primary-container transition-all font-body-md text-sm" href="#">Case Studies</a></li>
-<li><a class="text-surface-variant hover:text-primary-container transition-all font-body-md text-sm" href="#">Blog</a></li>
-<li><a class="text-surface-variant hover:text-primary-container transition-all font-body-md text-sm" href="#">Help Center</a></li>
+<li><a class="text-surface-variant hover:text-primary transition-all font-body-md text-sm" href="#">Case Studies</a></li>
+<li><a class="text-surface-variant hover:text-primary transition-all font-body-md text-sm" href="#">Blog</a></li>
+<li><a class="text-surface-variant hover:text-primary transition-all font-body-md text-sm" href="#">Help Center</a></li>
 </ul>
 </div>
 <!-- Company -->
 <div>
-<h4 class="font-label-bold text-label-bold text-primary-fixed mb-6">Company</h4>
+<h4 class="font-label-bold text-label-bold text-slate-900 mb-6">Company</h4>
 <ul class="space-y-3">
-<li><a class="text-surface-variant hover:text-primary-container transition-all font-body-md text-sm" href="#">About Us</a></li>
-<li><a class="text-surface-variant hover:text-primary-container transition-all font-body-md text-sm" href="#">Careers</a></li>
-<li><a class="text-surface-variant hover:text-primary-container transition-all font-body-md text-sm" href="#">Partners</a></li>
-<li><a class="text-surface-variant hover:text-primary-container transition-all font-body-md text-sm" href="#">Press</a></li>
-<li><a class="text-surface-variant hover:text-primary-container transition-all font-body-md text-sm" href="mailto:trust@dotko.in">Contact</a></li>
+<li><a class="text-surface-variant hover:text-primary transition-all font-body-md text-sm" href="#">About Us</a></li>
+<li><a class="text-surface-variant hover:text-primary transition-all font-body-md text-sm" href="#">Careers</a></li>
+<li><a class="text-surface-variant hover:text-primary transition-all font-body-md text-sm" href="#">Partners</a></li>
+<li><a class="text-surface-variant hover:text-primary transition-all font-body-md text-sm" href="#">Press</a></li>
+<li><a class="text-surface-variant hover:text-primary transition-all font-body-md text-sm" href="mailto:trust@dotko.in">Contact</a></li>
 </ul>
 </div>
 <!-- Newsletter -->
 <div>
-<h4 class="font-label-bold text-label-bold text-primary-fixed mb-4">Stay Updated</h4>
+<h4 class="font-label-bold text-label-bold text-slate-900 mb-4">Stay Updated</h4>
 <p class="text-surface-variant font-body-md text-sm mb-4">Get the latest on trust infrastructure and business insights.</p>
 <form class="flex gap-2" onsubmit="return false;">
-<input type="email" placeholder="Your email" class="flex-1 bg-white/10 border border-white/10 text-white placeholder-surface-variant/50 font-body-md text-sm px-4 py-2.5 rounded-lg focus:outline-none focus:border-primary-container transition-colors min-w-0"/>
+<input type="email" placeholder="Your email" class="flex-1 bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 font-body-md text-sm px-4 py-2.5 rounded-lg focus:outline-none focus:border-primary transition-colors min-w-0"/>
 <button type="submit" class="bg-primary-container text-on-primary-container px-4 py-2.5 rounded-lg hover:opacity-90 transition-all flex-shrink-0">
 <i class="fas fa-paper-plane text-sm"></i>
 </button>
@@ -518,14 +555,14 @@ How it Works
 </div>
 </div>
 <!-- Bottom bar -->
-<div class="border-t border-white/10 pt-8">
+<div class="border-t border-slate-200 pt-8">
 <div class="flex flex-wrap gap-4 mb-4">
-<a class="text-surface-variant/60 hover:text-surface-variant font-body-md text-xs transition-all" href="privacy-policy.html">Privacy Policy</a>
-<a class="text-surface-variant/60 hover:text-surface-variant font-body-md text-xs transition-all" href="terms-of-service.html">Terms of Service</a>
-<a class="text-surface-variant/60 hover:text-surface-variant font-body-md text-xs transition-all" href="cookie-policy.html">Cookie Policy</a>
-<a class="text-surface-variant/60 hover:text-surface-variant font-body-md text-xs transition-all" href="security.html">Security</a>
-<a class="text-surface-variant/60 hover:text-surface-variant font-body-md text-xs transition-all" href="compliance.html">Compliance</a>
-<a class="text-surface-variant/60 hover:text-surface-variant font-body-md text-xs transition-all" href="delete-account.html">Delete Account</a>
+<a class="text-slate-500 hover:text-primary font-body-md text-xs transition-all" href="privacy-policy.html">Privacy Policy</a>
+<a class="text-slate-500 hover:text-primary font-body-md text-xs transition-all" href="terms-of-service.html">Terms of Service</a>
+<a class="text-slate-500 hover:text-primary font-body-md text-xs transition-all" href="cookie-policy.html">Cookie Policy</a>
+<a class="text-slate-500 hover:text-primary font-body-md text-xs transition-all" href="security.html">Security</a>
+<a class="text-slate-500 hover:text-primary font-body-md text-xs transition-all" href="compliance.html">Compliance</a>
+<a class="text-slate-500 hover:text-primary font-body-md text-xs transition-all" href="delete-account.html">Delete Account</a>
 </div>
 <p class="text-surface-variant/60 font-body-md text-xs mb-2">© 2025 DotKo.in. All rights reserved. Building trust infrastructure for India's business ecosystem.</p>
 <p class="text-surface-variant/40 font-body-md text-xs leading-relaxed">Disclaimer: Dotko provides trust indicators for informational purposes. These do not constitute financial advice, guarantees, or credit ratings. Businesses should conduct their own due diligence.</p>
@@ -556,5 +593,24 @@ document.addEventListener('click', function(e) {
     if (icon) icon.className = 'fas fa-bars text-lg';
   }
 });
+// Scroll-reveal — same fade/slide-up-on-first-view treatment used on web.dotko.in.
+// Respects prefers-reduced-motion (handled in CSS: .reveal is fully visible by default there).
+(function () {
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = document.querySelectorAll('.reveal');
+  if (prefersReducedMotion || typeof IntersectionObserver === 'undefined') {
+    els.forEach(function (el) { el.classList.add('is-visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function (el) { io.observe(el); });
+})();
 </script>
 </body></html>
